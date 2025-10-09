@@ -1,17 +1,27 @@
+import Image from "next/image";
+import doctorImg from "../../../public/doctor-hero.png"
 export function Hero() {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center text-white text-center md:text-left px-4 md:px-0 mt-10 md:mt-20">
+        <div className="flex flex-col-reverse md:flex-row md:justify-between  justify-center px-4 md:px-0 mt-10 md:mt-20 border-b border-gray-700 pb-10 md:pb-20 gap-10 ">
 
-            <div className="flex flex-col items-center md:flex-row md:justify-between">
-                <div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">Olá, eu sou o Matheus</h2>
-                </div>
-                <div>
-                    <p className="text-lg mb-6">Desenvolvedor Front-end | React | Next.js | JavaScript | TypeScript</p>
-                </div>
-
-
+            <div className="flex-[2] space-y-8 max-w-3xl flex flex-col justify-center">
+                <article className="space-y-8 max-w-3xl flex flex-col justify-center">
+                    <h2 className="text-4xl md:text-5xl text-white text-center font-bold mb-4">Prazer em conhecer você !</h2>
+                    <h2 className="text-4xl md:text-5xl text-white text-center font-bold mb-4">Meu nome é <span className="underline decoration-emerald-400"> Matheus Santos</span></h2>
+                    <p className="text-sm text-gray-300 text-center mt-7">Sou um desenvolvedor front-end apaixonado por criar experiências digitais incríveis. Com habilidades em React, Next.js, JavaScript e TypeScript, estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente.</p>
+                </article>
             </div>
+            <div className="flex-1 flex justify-center items-center">
+                <Image
+                    src={doctorImg}
+                    alt="Doctor Hero"
+                    width={340}
+                    height={400}
+                    className="object-contain "
+                    quality={100}
+                    priority={true} />
+            </div>
+
         </div>
 
     )
