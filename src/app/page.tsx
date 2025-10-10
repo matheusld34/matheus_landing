@@ -2,6 +2,9 @@ import Image from "next/image";
 import { Header } from "./components/header";
 import { Hero } from "./components/hero";
 import { Tecnologies } from "./components/tecnlogies";
+import { CarouselSize } from "./components/carousel";
+import { Footer } from "./components/footer"
+
 
 export default function Home() {
   return (
@@ -10,7 +13,10 @@ export default function Home() {
         <Header />
         <Hero />
         <Tecnologies />
+        <CarouselSize />
+
       </div>
+      <Footer />
     </div>
 
   );
