@@ -1,5 +1,5 @@
 import Image from "next/image";
-import doctorImg from "../../../public/doctor-hero.png"
+import doctorImg from "../../../public/matheus1.png";
 export function Hero() {
     return (
         <div className="flex flex-col-reverse md:flex-row md:justify-between  justify-center px-4 md:px-0 mt-10 md:mt-20 border-b border-gray-700 pb-10 md:pb-20 gap-10 ">
@@ -17,7 +17,7 @@ export function Hero() {
                     alt="Doctor Hero"
                     width={340}
                     height={400}
-                    className="object-contain "
+                    className="object-contain rounded-lg animate-fade-left animate-once animate-duration-[2000ms] animate-ease-in-out"
                     quality={100}
                     priority={true} />
             </div>
