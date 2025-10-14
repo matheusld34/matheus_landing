@@ -6,9 +6,9 @@ export function Hero() {
 
             <div className="flex-[2] space-y-8 max-w-3xl flex flex-col justify-center">
                 <article className="space-y-8 max-w-3xl flex flex-col justify-center">
-                    <h2 className="text-4xl md:text-5xl text-white text-center font-bold mb-4">Prazer em conhecer você !</h2>
-                    <h2 className="text-4xl md:text-5xl text-white text-center font-bold mb-4">Meu nome é <span className="underline decoration-emerald-400"> Matheus Santos</span></h2>
-                    <p className="text-sm text-gray-300 text-center mt-7">Sou um desenvolvedor front-end apaixonado por criar experiências digitais incríveis. Com habilidades em React, Next.js, JavaScript e TypeScript, estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente.</p>
+                    <h2 className="text-4xl md:text-5xl text-white text-center font-bold mb-4 animate-fade-up animate-duration-[2000ms]">Prazer em te conhecer !</h2>
+                    <h2 className="text-4xl md:text-5xl text-white text-center font-bold mb-4 animate-fade-up animate-duration-[2000ms]">Meu nome é <span className="underline decoration-emerald-400"> Matheus Santos</span></h2>
+                    <p className="text-sm text-gray-300 text-center mt-7 animate-fade-up animate-duration-[2000ms]">Sou um desenvolvedor front-end apaixonado por criar experiências digitais incríveis. Com habilidades em React, Next.js, JavaScript e TypeScript, estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente.</p>
                 </article>
             </div>
             <div className="flex-1 flex justify-center items-center">
