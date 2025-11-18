@@ -5,10 +5,10 @@ import doctorImg from "../../../public/matheus1.png";
 export function Hero() {
     return (
 
-        <div className="flex flex-col-reverse md:flex-row md:justify-between  justify-center px-4 md:px-0 mt-10 md:mt-20 border-b border-gray-700 pb-10 md:pb-20 gap-10 ">
+        <div className="flex flex-col-reverse md:flex-row md:justify-between justify-center px-4 md:px-0 mt-10 md:mt-20 border-b border-gray-700 pb-10 md:pb-20 gap-10 ">
 
-            <div className="flex-[2] space-y-8 max-w-3xl flex flex-col justify-center items-center md:items-start">
-                <article className="space-y-8 max-w-3xl flex flex-col justify-center">
+            <div className="flex-[2] space-y-8 max-w-3xl flex flex-col justify-center items-center">
+                <article className="space-y-8 max-w-3xl flex flex-col justify-center items-center">
 
                     <h2 className="text-4xl md:text-5xl text-white text-center font-bold mb-4 animate-fade-up animate-duration-[2000ms]">Prazer em te conhecer !</h2>
                     <h2 className="text-4xl md:text-5xl text-white text-center font-bold mb-4 animate-fade-up animate-duration-[2000ms]">Meu nome é <span className="underline decoration-emerald-400"> Matheus Santos</span></h2>
