@@ -3,16 +3,23 @@ import { FaHtml5, FaCss3Alt, FaNodeJs, FaReact, FaSass } from "react-icons/fa";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { SiTypescript, SiPrisma, SiGit, SiGithub, SiStripe } from "react-icons/si";
 import GlareHover from "@/components/GlareHover";
-
+import TrueFocus from "@/components/TrueFocus";
 
 
 export function Tecnologies() {
     return (
         <div className="mt-10 md:mt-20 ">
 
-
-
-            <h2 className="text-3xl md:text-4xl text-white text-center font-bold mb-8">Tecnologias que utilizo</h2>
+            <div className="text-3xl md:text-4xl text-white text-center border-b border-gray-700 font-bold pb-10 md:pb-20 gap-10  mb-8">
+                <TrueFocus
+                    sentence="Tecnologias Utilizadas Nos Meus Projetos"
+                    manualMode={false}
+                    blurAmount={5}
+                    borderColor="#5fe398"
+                    animationDuration={2}
+                    pauseBetweenAnimations={1}
+                />
+            </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 px-4 md:px-0 mx-auto mb-12">
 
