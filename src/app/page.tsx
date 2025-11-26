@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Header } from "./components/header";
+import { About } from "./components/about";
 import { Hero } from "./components/hero";
 import { Tecnologies } from "./components/tecnlogies";
 import { CarouselSize } from "./components/carousel";
@@ -12,6 +13,7 @@ export default function Home() {
       <div className="min-h-screen max-w-7xl mx-auto">
         <Header />
         <Hero />
+        <About />
         <Tecnologies />
         <CarouselSize />
 
