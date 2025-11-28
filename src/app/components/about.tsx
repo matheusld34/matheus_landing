@@ -23,18 +23,69 @@ export function About() {
                         delay={5000}
                         pauseOnHover={false}
                     >
-                        <Card>
-                            <h3 className="text-white">Card 1</h3>
-                            <p className="text-white jus">Your content here</p>
+
+                        <Card className="bg-green-500 p-6 rounded-lg shadow-lg justify-center items-center">
+                            <div className="border-b border-white pb-4 mb-4">
+                                <h2 className="text-white font-bold text-lg">Tecnologias</h2>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">React </h2>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">NextJs </h2>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Tailwindcss</h2>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Prisma </h2>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">TypeScript </h2>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Github </h2>
+                            </div>
                         </Card>
-                        <Card>
-                            <h3>Card 2</h3>
-                            <p>Your content here</p>
+                        <Card className="bg-blue-600 p-6 rounded-lg shadow-lg">
+                            <div className="border-b border-white pb-4 mb-4">
+                                <h2 className="text-white font-bold text-lg">Técnico de Informática </h2>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Instituição: </h2><p className="text-white ml-1.5"> Etec Doutora Ruth Cardoso</p>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Formação: </h2><p className="text-white ml-1.5">Técnico em informática</p>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Início: </h2><p className="text-white ml-1.5"> Junho de 2017</p>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">término: </h2><p className="text-white ml-1.5"> Dezembro de 2018</p>
+                            </div>
+
                         </Card>
-                        <Card>
-                            <h3>Card 3</h3>
-                            <p>Your content here</p>
+
+                        <Card className="bg-red-400 p-6 rounded-lg shadow-lg">
+                            <div className="border-b border-white pb-4 mb-4">
+                                <h2 className="text-white font-bold text-lg">Análise e Desenvolvimento de Sistemas</h2>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Instituição: </h2><p className="text-white ml-1.5"> Fatec Rubens Lara</p>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Formação: </h2><p className="text-white ml-1.5">Análise e Desenvolvimento de sistemas</p>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">Início: </h2><p className="text-white ml-1.5"> Fevereiro de 2019</p>
+                            </div>
+                            <div className="flex mb-2">
+                                <h2 className="text-white font-bold">término: </h2><p className="text-white ml-1.5"> Dezembro de 2022</p>
+                            </div>
+
                         </Card>
+
+
                     </CardSwap>
                 </div>
 
@@ -43,21 +94,5 @@ export function About() {
 
         </div >
 
-
-        /*
-        <div className="flex flex-col items-center justify-center min-h-screen bg-stone-950 text-white px-4 md:px-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 mt-10 md:mt-20">Sobre Mim</h1>
-            <div className="max-w-3xl text-center">
-                <p className="text-lg md:text-xl mb-6">
-                    Olá! Meu nome é Matheus Santos e sou um desenvolvedor front-end apaixonado por criar experiências digitais incríveis. Com habilidades em React, Next.js, JavaScript e TypeScript, estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente.
-                </p>
-                <p className="text-lg md:text-xl mb-6">
-                    Ao longo da minha jornada como desenvolvedor, tive a oportunidade de trabalhar em diversos projetos que me permitiram aprimorar minhas habilidades técnicas e criativas. Adoro colaborar com equipes talentosas e contribuir para o sucesso de cada projeto.
-                </p>
-                <p className="text-lg md:text-xl">
-                    Quando não estou codificando, gosto de explorar novas tecnologias, participar de comunidades de desenvolvedores e compartilhar meu conhecimento por meio de blogs e redes sociais. Acredito que o aprendizado contínuo é essencial para se manter atualizado neste campo em constante evolução.
-                </p>
-            </div>
-        </div>*/
     );
 }

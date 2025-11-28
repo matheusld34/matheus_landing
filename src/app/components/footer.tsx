@@ -1,23 +1,12 @@
 
 export function Footer() {
     return (
-        <footer className="bg-gray-700">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex items-center justify-beetween">
-                    <div>
-                        <h1>teste</h1>
-
-                    </div>
-                    <div>
-
-                        <h1>Teste</h1>
-                        <h1>Teste</h1>
-                        <h1>Teste</h1>
-                    </div>
-
-                </div>
+        <footer className="w-full border-t border-gray-700 py-6 mt-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p className="text-center text-gray-400 text-sm">
+                    &copy; {new Date().getFullYear()} Meu Portfólio. Todos os direitos reservados.
+                </p>
             </div>
-
         </footer>
     )
 }
