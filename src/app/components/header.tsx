@@ -26,10 +26,10 @@ export function Header() {
 
                 />
                 <div className="flex mt-4 md:mt-0">
-                    <FaGithub size={24} className="text-white hover:text-slate-400 duration-300 cursor-pointer mr-4" />
-                    <FaLinkedin size={24} className="text-white hover:text-slate-400 duration-300 cursor-pointer" />
-                    <FaInstagram size={24} className="text-white hover:text-slate-400 duration-300 cursor-pointer ml-4" />
-                    <MdEmail size={24} className="text-white hover:text-slate-400 duration-300 cursor-pointer ml-4" />
+                    <a target="_blank" href="https://github.com/matheusld34"><FaGithub size={24} className="text-white hover:text-slate-400 duration-300 cursor-pointer mr-4" /> </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/matheuslopes95b93bb499/"><FaLinkedin size={24} className="text-white hover:text-slate-400 duration-300 cursor-pointer" /> </a>
+                    <a target="_blank" href="https://www.instagram.com/matheus_lop_san/"> <FaInstagram size={24} className="text-white hover:text-slate-400 duration-300 cursor-pointer ml-4" /></a>
+                    <a target="_blank" href=""><MdEmail size={24} className="text-white hover:text-slate-400 duration-300 cursor-pointer ml-4" /> </a>
                 </div>
             </div>
 
