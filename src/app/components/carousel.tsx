@@ -10,7 +10,13 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import TrueFocus from "@/components/TrueFocus";
-import foto from "@/assets/landing.jpg"
+import foto from "../../assets/landing.jpg"
+import foto2 from "../../assets/PetDev.jpg"
+import foto3 from "../../assets/DevControle.jpg"
+import foto4 from "../../assets/DalyGames.jpg"
+import foto5 from "../../assets/Street.jpg"
+import foto6 from "../../assets/Pizza.jpg"
+import { Button } from "@/components/ui/button";
 
 interface CarouselItem {
     id: number;
@@ -20,14 +26,13 @@ interface CarouselItem {
 }
 
 const data: CarouselItem[] = [
-    { id: 1, title: "landing page xyz", image: "https://unsplash.com/pt-br/fotografias/familia-colhendo-macas-de-uma-arvore-em-um-pomar-0VIqR7HmDZw", url: "https://github.com/matheusld34/landing-page-com-grid-agencia-xyz" },
-    { id: 2, title: "Item 2" },
-    { id: 3, title: "Item 3" },
-    { id: 4, title: "Item 4" },
-    { id: 5, title: "Item 5" },
-    { id: 6, title: "Item 6" },
-    { id: 7, title: "Item 7" },
-    { id: 8, title: "Item 8" },
+    { id: 1, title: "landing page xyz", image: foto, url: "https://github.com/matheusld34/landing-page-com-grid-agencia-xyz" },
+    { id: 2, title: "Projeto PetDev", image: foto2, url: "https://github.com/matheusld34/PetDev" },
+    { id: 3, title: "Projeto DevControle", image: foto3, url: "https://github.com/matheusld34/DevControle" },
+    { id: 4, title: "Projeto DalyGames", image: foto4, url: "https://github.com/matheusld34/DalyGames" },
+    { id: 5, title: "Projeto Street Fighter", image: foto5, url: "https://github.com/matheusld34/Projeto-Street-Fighter" },
+    { id: 6, title: "Projeto Pizza", image: foto6, url: "https://github.com/matheusld34/Automatiza-o_de_restaurante" },
+
 ]
 
 export function CarouselSize() {
@@ -61,9 +66,14 @@ export function CarouselSize() {
                             <CarouselItem key={item.id} className="sm:pl-2 md:basis-1/3 lg:basis-1/3">
                                 <div className="p-1">
                                     <Card>
-                                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                                            <img src={typeof item.image === 'string' ? item.image : item.image?.src} alt={item.title} className="rounded-md mb-4" />
+                                        <CardContent className="flex flex-col aspect-square items-center justify-center">
+                                            <img src={typeof item.image === 'string' ? item.image : item.image?.src} alt={item.title} className="rounded-md mb-4 " />
                                             <span className="text-3xl font-semibold">{item.title}</span>
+                                            <Button variant="link" className="mt-4" asChild>
+                                                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                                    Ver Projeto
+                                                </a>
+                                            </Button>
                                         </CardContent>
                                     </Card>
                                 </div>
