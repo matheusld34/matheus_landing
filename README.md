@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projeto Matheus Dev
+Estrutura do Projeto Matheus Dev, projeto desenvolvido para divulgar os projetos realizados e estudados por mim. <br>
+O projeto é uma landing page pessoal a qual serve como divulgação própria. no Site estão as informações das minhas redes sociais, formação, projetos e etc. por meio desta landing page, pode entrar em contato comigo. agradeço a atenção !
+<br>
+<br>
+<img src="./matheusDev.gif">
+<br>
+<br>
 
-## Getting Started
+# Login Utilizando conta no Google
+O projeto é responsivo como pode ser visualizado no video abaixo 
+<br>
+<br>
+<img src="./matheusDevMobile.gif">
+<br>
+<br>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Tecnologias Utilizadas &#128218;
+
+- React
+- Typescript
+- NextJs
+- Tailwind CSS
+
+<br>
+
+# Como Utilizar
+
 ```
+Clone o projeto:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+git clone <url>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Execute a aplicação com o seguinte comando: 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm run dev
 
-## Learn More
+ou 
 
-To learn more about Next.js, take a look at the following resources:
+yarn dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Você pode começar a editar a página modificando `app/page.tsx`. A página é atualizada automaticamente conforme você edita o arquivo.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este projeto usa [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) para otimizar e carregar automaticamente o Inter, uma fonte personalizada do Google.
