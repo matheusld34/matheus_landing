@@ -10,8 +10,8 @@ import { Footer } from "./components/footer"
 export default function Home() {
   return (
     <div className="bg-stone-950">
+      <Header />
       <div className="min-h-screen max-w-7xl mx-auto">
-        <Header />
         <Hero />
         <About />
         <Tecnologies />

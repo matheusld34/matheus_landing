@@ -3,8 +3,34 @@ import { FaHtml5, FaCss3Alt, FaNodeJs, FaReact, FaSass } from "react-icons/fa";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { SiTypescript, SiPrisma, SiGit, SiGithub, SiStripe } from "react-icons/si";
 import GlareHover from "@/components/GlareHover";
+import LogoLoop from "@/components/LogoLoop";
 import TrueFocus from "@/components/TrueFocus";
 
+const technologies = [
+    { name: "HTML5", icon: FaHtml5, color: "text-red-600" },
+    { name: "CSS3", icon: FaCss3Alt, color: "text-blue-600" },
+    { name: "Node.js", icon: FaNodeJs, color: "text-amber-300" },
+    { name: "React", icon: FaReact, color: "text-blue-400" },
+    { name: "Sass", icon: FaSass, color: "text-rose-400" },
+    { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-400" },
+    { name: "Next.js", icon: RiNextjsFill, color: "text-slate-800" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-blue-600" },
+    { name: "Prisma", icon: SiPrisma, color: "text-white" },
+    { name: "Git", icon: SiGit, color: "text-orange-600" },
+    { name: "GitHub", icon: SiGithub, color: "text-white" },
+    { name: "Stripe", icon: SiStripe, color: "text-violet-500" },
+];
+
+const cards = technologies.map(({ name, icon: Icon, color }) => ({
+    title: name,
+    node: (
+        <GlareHover width="150px" className="p-2">
+            <Icon
+                className={`h-full w-full ${color} animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear`}
+            />
+        </GlareHover>
+    ),
+}));
 
 export function Tecnologies() {
     return (
@@ -14,160 +40,24 @@ export function Tecnologies() {
                 <TrueFocus
                     sentence="Tecnologias Utilizadas Nos Meus Projetos"
                     manualMode={false}
-                    blurAmount={5}
+                    blurAmount={6}
                     borderColor="#5fe398"
-                    animationDuration={2}
+                    glowColor="rgba(95, 227, 152, 0.55)"
+                    animationDuration={1.5}
                     pauseBetweenAnimations={1}
                 />
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 px-4 md:px-0 mx-auto mb-12">
-
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <FaHtml5 className="w-12 h-12 text-red-600 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-
-                </GlareHover>
-
-
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <FaCss3Alt className="w-12 h-12 text-blue-600 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-
-
-
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <FaNodeJs className="w-12 h-12 text-amber-300 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <FaReact className="w-12 h-12 text-blue-400 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <FaSass className="w-12 h-12 text-rose-400 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <RiTailwindCssFill className="w-12 h-12 text-blue-400 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <RiNextjsFill className="w-12 h-12 text-slate-800 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <SiTypescript className="w-12 h-12 text-blue-600 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <SiPrisma className="w-12 h-12 text-white animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <SiGit className="w-12 h-12 text-orange-600 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <SiGithub className="w-12 h-12 text-white animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-
-                <GlareHover
-                    className=" p-2"
-                    glareColor="#ffffff"
-                    glareOpacity={0.3}
-                    glareAngle={-30}
-                    glareSize={200}
-                    transitionDuration={800}
-                    playOnce={false}
-                >
-                    <SiStripe className="w-12 h-12 text-violet-500 animate-rotate-x animate-infinite animate-duration-[2000ms] animate-ease-linear" />
-                </GlareHover>
-
-            </div>
+            <LogoLoop
+                logos={cards}
+                speed={70}
+                gap={24}
+                pauseOnHover
+                fadeOut
+                fadeOutColor="#0c0a09"
+                ariaLabel="Tecnologias utilizadas nos meus projetos"
+                className="mt-10 mb-12 px-4 py-6 md:px-0"
+            />
         </div >
     )
 }

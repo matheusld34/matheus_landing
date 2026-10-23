@@ -1,6 +1,6 @@
 import type { SpringOptions } from 'motion/react';
 import { useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 
 interface TiltedCardProps {
   imageSrc: React.ComponentProps<'img'>['src'];
@@ -19,9 +19,9 @@ interface TiltedCardProps {
 }
 
 const springValues: SpringOptions = {
-  damping: 30,
-  stiffness: 100,
-  mass: 2
+  damping: 18,
+  stiffness: 150,
+  mass: 0.7
 };
 
 export default function TiltedCard({
@@ -39,9 +39,12 @@ export default function TiltedCard({
   overlayContent = null,
   displayOverlayContent = false
 }: TiltedCardProps) {
-  const ref = useRef<HTMLElement>(null);
+  const figureRef = useRef<HTMLElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const glareX = useMotionValue(0);
+  const glareY = useMotionValue(0);
   const rotateX = useSpring(useMotionValue(0), springValues);
   const rotateY = useSpring(useMotionValue(0), springValues);
   const scale = useSpring(1, springValues);
@@ -52,12 +55,26 @@ export default function TiltedCard({
     mass: 1
   });
 
+  const [hovered, setHovered] = useState(false);
   const [lastY, setLastY] = useState(0);
 
-  function handleMouse(e: React.MouseEvent<HTMLElement>) {
-    if (!ref.current) return;
+  const glareBackground = useTransform(
+    [glareX, glareY],
+    ([latestGlareX, latestGlareY]: number[]) =>
+      `radial-gradient(circle at ${latestGlareX}px ${latestGlareY}px, rgba(255,255,255,0.25), rgba(255,255,255,0.05) 40%, transparent 70%)`
+  );
 
-    const rect = ref.current.getBoundingClientRect();
+  function updateGlare(e: React.MouseEvent<HTMLElement>) {
+    if (!cardRef.current) return;
+    const cardRect = cardRef.current.getBoundingClientRect();
+    glareX.set(e.clientX - cardRect.left);
+    glareY.set(e.clientY - cardRect.top);
+  }
+
+  function handleMouse(e: React.MouseEvent<HTMLElement>) {
+    if (!figureRef.current) return;
+
+    const rect = figureRef.current.getBoundingClientRect();
     const offsetX = e.clientX - rect.left - rect.width / 2;
     const offsetY = e.clientY - rect.top - rect.height / 2;
 
@@ -70,14 +87,18 @@ export default function TiltedCard({
     x.set(e.clientX - rect.left);
     y.set(e.clientY - rect.top);
 
+    updateGlare(e);
+
     const velocityY = offsetY - lastY;
     rotateFigcaption.set(-velocityY * 0.6);
     setLastY(offsetY);
   }
 
-  function handleMouseEnter() {
+  function handleMouseEnter(e: React.MouseEvent<HTMLElement>) {
+    updateGlare(e);
     scale.set(scaleOnHover);
     opacity.set(1);
+    setHovered(true);
   }
 
   function handleMouseLeave() {
@@ -86,11 +107,12 @@ export default function TiltedCard({
     rotateX.set(0);
     rotateY.set(0);
     rotateFigcaption.set(0);
+    setHovered(false);
   }
 
   return (
     <figure
-      ref={ref}
+      ref={figureRef}
       className="relative w-full h-full [perspective:800px] flex flex-col items-center justify-center"
       style={{
         height: containerHeight,
@@ -107,7 +129,12 @@ export default function TiltedCard({
       )}
 
       <motion.div
-        className="relative [transform-style:preserve-3d]"
+        ref={cardRef}
+        className={`relative rounded-[15px] [transform-style:preserve-3d] transition-shadow duration-500 ${
+          hovered
+            ? 'shadow-[0_30px_60px_-15px_rgba(16,185,129,0.45)]'
+            : 'shadow-[0_12px_35px_-20px_rgba(0,0,0,0.9)]'
+        }`}
         style={{
           width: imageWidth,
           height: imageHeight,
@@ -119,10 +146,21 @@ export default function TiltedCard({
         <motion.img
           src={imageSrc}
           alt={altText}
-          className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
+          className={`absolute top-0 left-0 object-cover rounded-[15px] transition-shadow duration-500 will-change-transform [transform:translateZ(0)] ${
+            hovered ? 'ring-2 ring-emerald-400/40' : 'ring-1 ring-white/10'
+          }`}
           style={{
             width: imageWidth,
             height: imageHeight
+          }}
+        />
+
+        {/* Reflexo que acompanha o cursor */}
+        <motion.div
+          className="pointer-events-none absolute inset-0 z-[3] rounded-[15px]"
+          style={{
+            background: glareBackground,
+            opacity
           }}
         />
 
