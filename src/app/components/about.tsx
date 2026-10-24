@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react";
 import { FaGraduationCap, FaLaptopCode, FaLayerGroup } from "react-icons/fa";
 import CardSwap, { Card } from "@/components/CardSwap";
 
@@ -20,6 +21,16 @@ function DetailRow({ label, value }: { label: string; value: string }) {
 }
 
 export function About() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const mq = window.matchMedia("(max-width: 767px)");
+        const sync = () => setIsMobile(mq.matches);
+        sync();
+        mq.addEventListener("change", sync);
+        return () => mq.removeEventListener("change", sync);
+    }, []);
+
     return (
 
         <div className="relative flex flex-col-reverse md:flex-row md:justify-between border-b border-gray-700 pb-10 md:pb-20 ">
@@ -49,14 +60,17 @@ export function About() {
                     </p>
                 </article>
             </div>
-            <div className="flex-[1] flex flex-col sm:justify-center sm:items-center ml-20  md:justify-end md:items-end md:py-50 ">
+            <div className="flex w-full flex-col items-center justify-center pt-8 md:flex-1 md:items-end md:justify-end md:py-50">
 
-                <div style={{ height: '400px', position: 'relative' }} className="">
+                <div className="relative" style={{ width: isMobile ? 280 : 500, height: 400 }}>
                     <CardSwap
-                        cardDistance={60}
-                        verticalDistance={70}
+                        width={isMobile ? 280 : 500}
+                        height={400}
+                        cardDistance={isMobile ? 12 : 60}
+                        verticalDistance={isMobile ? 14 : 70}
                         delay={5000}
                         pauseOnHover={false}
+                        className="bottom-0 right-0 md:origin-bottom-right md:translate-x-[5%] md:translate-y-[20%]"
                     >
 
                         <Card
